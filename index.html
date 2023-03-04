@@ -56,8 +56,17 @@
 
 
         <!-- Plantilla para el componente item-data -->
-        <script type="text/x-template" id="itemData">
-
+        <script type="text/x-template" id="itemData">          
+            <div class="card">
+              <div class="card-body">
+                  <div v-for=" pelis in element.data">
+                <h4 class="card-title">{{pelis.prompt}}</h4>
+                <p class="card-text">{{pelis.value}}</p> 
+              </div>
+              <a v-bind:href="element.href" target="_blanck" type="button" class="btn btn-primary">Ver</a>
+              <a v-on:click="toggleEditFormVisibility(element)" id="formButton" type="button" class="btn btn-secondary">Editar</a>
+              </div>
+            </div>
             <!--
                  TODO: Componente item-data
             -->
